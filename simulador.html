@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simulador de presupuesto CONVEL</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #afaeae;
+      color: #333333;
+    }
+
+    h1 {
+      color: #ff0000;
+      text-align: center;
+    }
+
+    h2 {
+      color: red;
+      text-align: center;
+      text-decoration: underline;
+      text-decoration-color: gray;
+      text-decoration-skip-ink: none;
+      text-decoration-thickness: 3px;
+    }
+
+    p{
+      text-align: justify;
+    }
+
+    label, input {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    input[type="number"] {
+      padding: 5px;
+      border: 1px solid #cccccc;
+      width: 150px;
+    }
+
+    button {
+      margin: 10px auto;
+      display: block;
+      padding: 10px 20px;
+      background-color: #ff0000;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #990000;
+    }
+
+    #resultadoSimulado {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #ff0000;
+      text-align: center;
+    }
+
+    #resultadoTotalSimulado {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #ff0000;
+      text-align: center;
+    }
+   
+    .container {
+      position: relative;
+    }
+
+    .image {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .text {
+      flex: 1;
+      margin-right: 20px;
+    }
+
+    section {
+      background-color: #f2f2f2;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    a {
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+  <script>
+    function simularNumeros() {
+      var num1 = (parseInt(document.getElementById('numero1').value)-4.714285714285714)/1.3012000972647109;
+      var num2 = (parseInt(document.getElementById('numero2').value)-19.107142857142858)/9.585248255886967;
+      var num3 = (parseInt(document.getElementById('numero3').value)-1.75)/1.838376900863811;
+      var num4 = (parseInt(document.getElementById('numero4').value)-2.2142857142857144)/2.024976320979853;
+      var num5 = (parseInt(document.getElementById('numero5').value)-5766.307114285714)/6721.872963420514;
+      var num6 = (parseInt(document.getElementById('numero6').value)-27771.843363773896)/21570.469577404332;
+      var num7 = (parseInt(document.getElementById('numero7').value)-5351.982649488183)/4999.76528369539;
+      var num8 = (parseInt(document.getElementById('numero8').value)-1789.925542857143)/1204.7962558952552;
+      var num9 = (parseInt(document.getElementById('numero9').value)-24.821428571428573)/11.658897639995565;
+      var num10 = (parseInt(document.getElementById('numero10').value)-3.0714285714285716)/0.7163989902474133;
+      var num11 = (parseInt(document.getElementById('numero11').value)-2.6785714285714284)/1.9255316039140873;
+      var num12 = (parseInt(document.getElementById('numero12').value)-24.5)/17.14264770595168;
+      var num13 = (parseInt(document.getElementById('numero13').value)-1211.0209142857143)/3654.756584110812;
+      var num14 = (parseInt(document.getElementById('numero14').value)-1.3571428571428572)/0.4879500364742666;
+      var num15 = (parseInt(document.getElementById('numero15').value)-766439887.5337161)/718379380.8302376;
+      var num16 = (parseInt(document.getElementById('numero16').value)-787727386.2548462)/753825614.3828982;
+      var num17 = (parseInt(document.getElementById('numero17').value)-5047628856.588471)/6262799196.36075;
+      var num18 = (parseInt(document.getElementById('numero18').value)-233804705.14498094)/253978737.78937358;
+      var num19 = (parseInt(document.getElementById('numero19').value)-2263476282.524756)/3216303104.1975584;
+      var num20 = (parseInt(document.getElementById('numero20').value)-72536181.20438765)/118342425.75546543;
+      var num21 = (parseInt(document.getElementById('numero21').value)-37928530.24276825)/49929559.82181508;
+      var num22 = (parseInt(document.getElementById('numero22').value)-562222416.0000079)/687696473.5334331;
+      var num23 = (parseInt(document.getElementById('numero23').value)-978914670.0439892)/1126599327.274594;
+      var num24 = (parseInt(document.getElementById('numero24').value)-433881020.43211174)/1038924332.4337287;
+
+      var precio_est = 1.249e-16 + 0.3613*num1 -0.6360*num2 - 0.0450*num3 + 0.3270*num4 - 0.0138*num5 - 0.1343*num6 - 0.0334*num7 - 0.2225*num8 - 0.2072*num9 - 0.0828*num10 - 0.3671*num11 + 0.1935*num12 + 
+                      0.5486*num13 + 0.0147*num14 + 1.1503*num15 - 0.1596*num16 + 0.0888*num17 - 0.0955*num18 - 0.2974*num19 + 0.0374*num20 - 0.1470*num21 - 0.176*num22 - 0.1644*num23 + 0.1104*num24;
+
+      var precio = (precio_est * 901625.9632578358) + 1896933.9719233178;
+
+      var areaTotal = (num6 * 21570.469577404332) + 27771.843363773896;
+
+      var totalProyectoSimulado = precio * areaTotal;
+
+      document.getElementById('resultadoSimulado').textContent = "Precio del metro cuadrado simulado: " + Math.round(precio);
+
+      document.getElementById('resultadoTotalSimulado').textContent = "Valor total del proyecto simulado: " + Math.round(totalProyectoSimulado);
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Simulador de presupuesto CONVEL</h1>
+    <img class="image" src="CONVEL.png" alt="Imagen" width="100" height="40">
+  </div>
+
+  <p class="text">
+    Explore las secciones del simulador. Antes de inicial siga las instrucciones presentadas en:
+    <a href="index.html">Instrucciones simulador</a>
+  </p>
+
+  <ul>
+    <li><a href="#seccion1">Estrato y características físicas del proyecto</a></li>
+    <li><a href="#seccion2">Sobre las áreas del proyecto</a></li>
+    <li><a href="#seccion3">Suelos, cimentaciones y estructuras del proyecto</a></li>
+    <li><a href="#seccion4">Capítulos del proyecto</a></li>
+    <li><a href="#contacto">Dudas e inquietudes sobre el simulador</a></li>
+  </ul>
+
+  <br>
+  <section>
+    <h2 id="seccion1">Estrato y características físicas del proyecto</h2>
+
+    <label for="numero1">Estrato socioeconómico donde se encuentra el proyecto:</label>
+    <input type="number" id="numero1" min="1" max="6">
+
+    <br>
+
+    <label for="numero2">Número de pisos por torre del proyecto:</label>
+    <input type="number" id="numero2">
+
+    <br>
+
+    <label for="numero3">Número de pisos en sotano del proyecto:</label>
+    <input type="number" id="numero3">
+
+    <br>
+
+    <label for="numero4">Número de torres del proyecto:</label>
+    <input type="number" id="numero4">
+
+  </section>
+  
+  <section>
+    <h2 id="seccion2">Sobre las áreas del proyecto</h2>
+
+    <label for="numero5">Área del lote en metros cuadrados m2:</label>
+    <input type="number" id="numero5">
+
+    <br>
+
+    <label for="numero6">Área construida total en metros cuadrados m2:</label>
+    <input type="number" id="numero6">
+
+    <br>
+
+    <label for="numero7">Área construida plataforma en metros cuadrados m2:</label>
+    <input type="number" id="numero7">
+
+    <br>
+
+    <label for="numero8">Área huella del edificio en metros cuadrados m:</label>
+    <input type="number" id="numero8">
+
+    <br>
+
+    <label for="numero9">Cronograma en meses:</label>
+    <input type="number" id="numero9">
+
+  </section>
+
+  <section>
+
+    <h2 id="seccion3">Suelos, cimentaciones y estructuras del proyecto</h2>
+
+    <label for="numero10">Tipo de suelo: {'Flujos':1, 'Arcillas':2, 'Sin dato':3, 'Limos':4, 'Roca':5}:</label>
+    <input type="number" id="numero10" min="1" max="5">
+
+    <br>
+
+    <label for="numero11">Tipo de cimentación: {'Pilas':1, 'Pilotes Hincados':2, 'Zapatas':3, 'Pilote Preexcavado':4, 'Pilotes':5, 'Pilotes Incados':6, 'Micropilotes':7}:</label>
+    <input type="number" id="numero11" min="1" max="7">
+
+    <br>
+
+    <label for="numero12">Profundidad de cimentación en metros m:</label>
+    <input type="number" id="numero12">
+
+    <br>
+
+    <label for="numero13">Contenciones en metros cuadrados m2:</label>
+    <input type="number" id="numero13">
+
+    <br>
+
+    <label for="numero14">Estructura: {'Aporticada':1, 'Muros Vaciados':2}:</label>
+    <input type="number" id="numero14" min="1" max="2">
+
+  </section>
+  
+  <section>
+
+    <h2 id="seccion4">Capítulos del proyecto</h2>
+
+    <label for="numero15">Provisionales-Preliminares en $:</label>
+    <input type="number" id="numero15">
+
+    <br>
+
+    <label for="numero16">Movimiento de tierras, excavaciones y llenos en $:</label>
+    <input type="number" id="numero16">
+
+    <br>
+
+    <label for="numero17">Cimentaciones y contenciones en $:</label>
+    <input type="number" id="numero17">
+
+    <br>
+
+    <label for="numero18">Mesones en $:</label>
+    <input type="number" id="numero18">
+
+    <br>
+
+    <label for="numero19">Equipos especiales en $:</label>
+    <input type="number" id="numero19">
+
+    <br>
+
+    <label for="numero20">Jardineria en $:</label>
+    <input type="number" id="numero20">
+
+    <br>
+
+    <label for="numero21">Señalización en $:</label>
+    <input type="number" id="numero21">
+
+    <br>
+
+    <label for="numero22">Urbanismo en $:</label>
+    <input type="number" id="numero22">
+
+    <br>
+
+    <label for="numero23">Imprevistos en $:</label>
+    <input type="number" id="numero23">
+
+    <br>
+
+    <label for="numero24">Honorarios en $:</label>
+    <input type="number" id="numero24">
+
+  </section>
+  
+  <button onclick="simularNumeros()">Simular valores presupuestales</button>
+  <br>
+  <h2>Resultados simulados del proyecto</h2>
+  <br>
+  <div id="resultadoSimulado"></div>
+  <br>
+  <div id="resultadoTotalSimulado"></div>
+
+  <br>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Email: julianuribe@itm.edu.co</p>
+    <a class="whatsapp-button" href="https://wa.me/3013354163">Contactar por WhatsApp</a>
+  </section>
+
+  <br>
+
+  <footer>
+    <p>&copy; Desarrollado por: Julián Alberto Uribe Gómez. 2023.</p>
+  </footer>
+</body>
+</html>

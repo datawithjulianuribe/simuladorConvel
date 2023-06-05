@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simulador de presupuesto CONVEL</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #afaeae;
+      color: #333333;
+    }
+
+    h1 {
+      color: #ff0000;
+      text-align: center;
+    }
+
+    h2 {
+      color: red;
+      text-align: center;
+      text-decoration: underline;
+      text-decoration-color: gray;
+      text-decoration-skip-ink: none;
+      text-decoration-thickness: 3px;
+    }
+
+    p{
+      text-align: justify;
+    }
+
+    label, input {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    input[type="number"] {
+      padding: 5px;
+      border: 1px solid #cccccc;
+      width: 150px;
+    }
+
+    button {
+      margin: 10px auto;
+      display: block;
+      padding: 10px 20px;
+      background-color: #ff0000;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #990000;
+    }
+
+    #resultadoSimulado {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #ff0000;
+      text-align: center;
+    }
+
+    #resultadoTotalSimulado {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #ff0000;
+      text-align: center;
+    }
+   
+    .container {
+      position: relative;
+    }
+
+    .image {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .text {
+      flex: 1;
+      margin-right: 20px;
+    }
+
+    section {
+      background-color: #f2f2f2;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    a {
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+  
+</head>
+<body>
+  <div class="container">
+    <h1>Simulador de presupuesto CONVEL</h1>
+    <img class="image" src="CONVEL.png" alt="Imagen" width="100" height="40">
+  </div>
+
+  <p class="text">
+    Un simulador de presupuesto para proyectos son herramientas indispensables en la toma de decisiones empresariales. 
+    Estos permiten evaluar diferentes escenarios en la realización de un proyecto optimizando recursos. 
+    Los simuladores brindan una visión clara y estrategica de la viabilidad de un proyecto, ayudando a gerentes, jefes y coordinadores en tomar decisiones informadas y estratégicas. 
+    Al utilizar estas herramientas, las empresas pueden minimizar riesgos, maximizar rentabilidad y garantizar la ejecución exitosa de proyectos de construcción.
+  </p>
+
+  <ul>
+    <li><a href="#introduccion">Introducción</a></li>
+    <li><a href="#instrucciones">Instrucciones sobre el simulador de presupuestos CONVEL</a></li>
+    <li><a href="simulador.html">Simulador de presupuestos CONVEL</a></li>
+    <li><a href="#contacto">Dudas e inquietudes sobre el simulador</a></li>
+  </ul>
+  
+  <br>
+
+  <section>
+    <h2 id="introduccion">Introducción</h2>
+    <p class="text">
+      En el contexto de cualquier organización, los administradores centran sus esfuerzos en conocer el estado futuro de sus áreas, con el fin de minimizar los riesgos y tomar mejores decisiones. Actualmente, las organizaciones se han centrado en entender y dar valor a los datos generados al interior de sus procesos, mediante el uso de modelos de optimización y herramientas computacionales, con el objetivo de convertirlos en información valiosa y encontrar soluciones óptimas y competitivas.
+      El simulador presentado cuenta con el siguiente módulo:
+      <a href="simulador.html">Simulador de presupuestos CONVEL</a> El cual calcula el precio en metros cuadrados de un proyecto con base en 24 variables claves:
+      <ul>
+        <li>Estrato (1-2-3-4-5-6)</li>
+        <li>Pisos por torre</li>
+        <li>Pisos por sótano</li>
+        <li>Número de torres</li>
+        <li>Área del Lote en metros cuadrados</li>
+        <li>Área construida total en metros cuadrados</li>
+        <li>Área construida plataforma en metros cuadrados</li>
+        <li>Área huella del edificio en metros cuadrados</li>
+        <li>Cronograma en meses</li>
+        <li>Tipo de suelo {'Flujos':1, 'Arcillas':2, 'Sin dato':3, 'Limos':4, 'Roca':5}</li>
+        <li>Tipo de cimentación {'Pilas':1, 'Pilotes Hincados':2, 'Zapatas':3, 'Pilote Preexcavado':4,'Pilotes':5, 'Pilotes Incados':6, 'Micropilotes':7}</li>
+        <li>Profundidad de cimentación en metros</li>
+        <li>Contenciones en metros cuadrados</li>
+        <li>Estructura {'Aporticada':1, 'Muros Vaciados':2}</li>
+        <li>Preliminares $</li>
+        <li>Excavaciones $</li>
+        <li>Cimentaciones $</li>
+        <li>Mesones $</li>
+        <li>Equipos Especiales $</li>
+        <li>Jardinería $</li>
+        <li>Señalización $</li>
+        <li>Urbanismo $</li>
+        <li>Imprevistos $</li>
+        <li>Honorarios $</li>
+      </ul>
+    </p>
+  </section>
+
+  <br>
+
+  <section>
+    <h2 id="instrucciones">Instrucciones sobre el simulador de presupuestos CONVEL</h2>
+    <p class="text">
+      La calculadora/simulador tiene como objetivo apoyar el proceso de toma de decisiones al momento establecer el precio en metros cuadrados de un proyecto de construcción, para ello se han generado una serie de preguntas que guiarán y ayudarán en el proceso de simulación. Antes de iniciar tenga en cuenta lo siguiente: 
+      <ul>
+        <li>No deje ningún campo vacio.</li>
+        <li>Solo responda con números positivos y no asigne letras, símbolos o caracteres especiales a las casillas de entrada.</li>
+        <li>Para las variables Tipo de suelo, Tipo de cimentación y Estructura, su equivalente numérico se encuentra entre {} al lado de la variable.</li>
+        <li>En caso de responder con números decimales o flotantes, utilice punto (.).</li>
+        <li>Puede cambiar cualquier valor para simular el resultado. No olvide dar click al botón 'Simular valores presupuestales'.</li>
+      </ul>
+    </p>
+  </section>
+
+  <br>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Email: julianuribe@itm.edu.co</p>
+    <a class="whatsapp-button" href="https://wa.me/3013354163">Contactar por WhatsApp</a>
+  </section>
+
+  <br>
+  
+  <footer>
+    <p>&copy; Desarrollado por: Julián Alberto Uribe Gómez. 2023.</p>
+  </footer>
+</body>
+</html>
